@@ -51,9 +51,17 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = main.cpp \
-		mainwindow.cpp moc_mainwindow.cpp
+		mainwindow.cpp \
+		pessoa.cpp \
+		agenda.cpp \
+		ldde.cpp \
+		lds.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
+		pessoa.o \
+		agenda.o \
+		ldde.o \
+		lds.o \
 		moc_mainwindow.o
 DIST          = /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/common/unix.conf \
@@ -218,6 +226,7 @@ DIST          = /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/spec_pre.prf 
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/qt_config.prf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -237,8 +246,16 @@ DIST          = /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/spec_pre.prf 
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/exceptions.prf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/yacc.prf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/lex.prf \
-		AgendaDigital.pro mainwindow.h main.cpp \
-		mainwindow.cpp
+		AgendaDigital.pro mainwindow.h \
+		pessoa.h \
+		agenda.h \
+		ldde.h \
+		lds.h main.cpp \
+		mainwindow.cpp \
+		pessoa.cpp \
+		agenda.cpp \
+		ldde.cpp \
+		lds.cpp
 QMAKE_TARGET  = AgendaDigital
 DESTDIR       = 
 TARGET        = AgendaDigital
@@ -413,6 +430,7 @@ Makefile: AgendaDigital.pro /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/linux-g++/
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/qt_config.prf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -600,6 +618,7 @@ Makefile: AgendaDigital.pro /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/linux-g++/
 /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/qt_config.prf:
 /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/toolchain.prf:
 /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/default_pre.prf:
@@ -638,8 +657,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h pessoa.h agenda.h ldde.h lds.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp pessoa.cpp agenda.cpp ldde.cpp lds.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -1030,8 +1049,60 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qicon.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/QVariant \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QAction \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qaction.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QApplication \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qapplication.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qeventloop.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qguiapplication.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qinputmethod.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QHeaderView \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qframe.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qvalidator.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qregularexpression.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qslider.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qstyle.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QLabel \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qlabel.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QMenuBar \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qmenu.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QStatusBar \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QToolBar \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtoolbar.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
+
+pessoa.o: pessoa.cpp pessoa.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pessoa.o pessoa.cpp
+
+agenda.o: agenda.cpp agenda.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o agenda.o agenda.cpp
+
+ldde.o: ldde.cpp ldde.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ldde.o ldde.cpp
+
+lds.o: lds.cpp lds.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lds.o lds.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
