@@ -2,10 +2,15 @@
 #define LDDE_H
 
 
-class LDDE
-{
+template <typename T>
+class Ldde{
+private:
+    Registro<T> *primeiro = new Registro<T>(NULL);
 public:
-    LDDE();
+    Ldde(T valor);
+    bool inserir(T valor);
+    void imprimir();
 };
+
 
 #endif // LDDE_H
