@@ -47,6 +47,16 @@ public:
         }
 
     }
+    
+    Registro<T> *busca(T valor){
+         Registro<T> *b = primeiro;
+         while(b){
+             if(b->getConteudo()==valor)
+               return b;
+                                          
+          b=b->getProximo();
+         }                
+   }
 };
 
 
