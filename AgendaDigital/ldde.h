@@ -43,26 +43,43 @@ public:
 				return true;
 	    }
 	
-	//remocao pode sofrer modificacao ainda!!!!
-	    bool remover(T valor){
+	//remocao Sofrera modificacao ainda!!
+	    bool Remove(T valor){
          Registro<T> *a = NULL;
-         Registro<T> *b = primeiro;
-         Registro<T> *c = busca(novo->getConteudo()); 
-         
+    	 Registro<T> *b = primeiro;
+         Registro<T> *c = busca(valor);
+
          if(!c){
          cout<<"O que voce esta tentando excluir não existe dentro da lista!!"<<endl;
-         return false        
+         return false;
          }
-         
-         a = c->getAnterior();
-         b = c->getProximo();
-         a->setProximo(b);
-         b->setAnterior(a);
+
+   	if(c == primeiro){
+		 primeiro = c->getProximo;
+		 c->getProximo->SetAnterior = primeiro;
+		 primeiro->SetAnterior = NULL;
+		 delete c;
+			return true;
+		}
+
+
+		 if(c == ultimo){
+		 ultimo = c->getAnterior();
+   		c->getAnterior()->setProximo() = ultimo;
+   		ultimo->setProximo = NULL;
+   		delete c;
+		    return true;
+		 }
+
+
+	 a = c->getAnterior();
+	 b = c->getProximo();
+         a->SetProximo() = b;
+         b->SetAnterior() = a;
          delete c;
          return true;
-         
-         
-    }
+		
+	}
 		
 	    void imprimir(){
 	        Registro<T> *b = primeiro;//primeiro
