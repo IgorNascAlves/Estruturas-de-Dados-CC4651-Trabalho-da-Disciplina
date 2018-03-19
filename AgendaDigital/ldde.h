@@ -9,6 +9,7 @@ template <typename T>
 class Ldde{
 private:
     Registro<T> *primeiro;
+    Registro<T> *ultimo;
 public:
     	    Ldde(){
 	        primeiro = NULL;
