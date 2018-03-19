@@ -72,17 +72,15 @@ public:
 	            i++;
 	        }
 	    }
-	    int buscar(T valor){
-	 		 Registro<T> *b = primeiro;
-	 		 int i = 0;
-	 		 while(b && b->getConteudo()){
-				if(b->getConteudo() == valor)
-				    return i;
-				b = b->getProximo();
-				i++;
-			}
-			return -1;
-		}
+	  Registro<T> *busca(T valor){
+                Registro<T> *b = primeiro;
+                while(b){
+                         if(b->getConteudo()==valor){
+                            return b;
+                                          }
+                            b=b->getProximo();
+                }                
+    }
 
 };
 
