@@ -42,7 +42,7 @@ public:
 				return true;
 	    }
 	
-	//remocao pode sofrer modificacao ainda!!!
+	//remocao pode sofrer modificacao ainda!!!!
 	    bool remover(T valor){
          Registro<T> *a = NULL;
          Registro<T> *b = primeiro;
