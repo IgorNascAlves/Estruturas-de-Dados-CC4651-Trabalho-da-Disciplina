@@ -41,6 +41,28 @@ public:
 
 				return true;
 	    }
+	
+	//remocao pode sofrer modificacao ainda!!!
+	    bool remover(T valor){
+         Registro<T> *a = NULL;
+         Registro<T> *b = primeiro;
+         Registro<T> *c = busca(novo->getConteudo()); 
+         
+         if(!c){
+         cout<<"O que voce esta tentando excluir não existe dentro da lista!!"<<endl;
+         return false        
+         }
+         
+         a = c->getAnterior();
+         b = c->getProximo();
+         a->setProximo(b);
+         b->setAnterior(a);
+         delete c;
+         return true;
+         
+         
+    }
+		
 	    void imprimir(){
 	        Registro<T> *b = primeiro;//primeiro
 			int i = 0;
