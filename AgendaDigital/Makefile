@@ -51,17 +51,9 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = main.cpp \
-		mainwindow.cpp \
-		pessoa.cpp \
-		agenda.cpp \
-		ldde.cpp \
-		lds.cpp moc_mainwindow.cpp
+		mainwindow.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
-		pessoa.o \
-		agenda.o \
-		ldde.o \
-		lds.o \
 		moc_mainwindow.o
 DIST          = /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/common/unix.conf \
@@ -250,12 +242,9 @@ DIST          = /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/spec_pre.prf 
 		pessoa.h \
 		agenda.h \
 		ldde.h \
-		lds.h main.cpp \
-		mainwindow.cpp \
-		pessoa.cpp \
-		agenda.cpp \
-		ldde.cpp \
-		lds.cpp
+		lds.h \
+		registro.h main.cpp \
+		mainwindow.cpp
 QMAKE_TARGET  = AgendaDigital
 DESTDIR       = 
 TARGET        = AgendaDigital
@@ -657,8 +646,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h pessoa.h agenda.h ldde.h lds.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp pessoa.cpp agenda.cpp ldde.cpp lds.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h pessoa.h agenda.h ldde.h lds.h registro.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -939,7 +928,9 @@ main.o: main.cpp mainwindow.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qeventloop.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qguiapplication.h \
-		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qinputmethod.h
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qinputmethod.h \
+		registro.h \
+		ldde.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -1091,18 +1082,6 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtoolbar.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
-
-pessoa.o: pessoa.cpp pessoa.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pessoa.o pessoa.cpp
-
-agenda.o: agenda.cpp agenda.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o agenda.o agenda.cpp
-
-ldde.o: ldde.cpp ldde.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ldde.o ldde.cpp
-
-lds.o: lds.cpp lds.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lds.o lds.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

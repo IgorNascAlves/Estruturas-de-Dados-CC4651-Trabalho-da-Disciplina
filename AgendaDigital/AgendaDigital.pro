@@ -25,18 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    pessoa.cpp \
-    agenda.cpp \
-    ldde.cpp \
-    lds.cpp
+        mainwindow.cpp
 
 HEADERS += \
         mainwindow.h \
     pessoa.h \
     agenda.h \
     ldde.h \
-    lds.h
+    lds.h \
+    registro.h
 
 FORMS += \
         mainwindow.ui
