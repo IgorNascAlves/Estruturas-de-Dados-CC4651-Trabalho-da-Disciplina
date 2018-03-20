@@ -44,7 +44,7 @@ public:
 	    }
 	
 	//remocao Sofrera modificacao ainda!!
-	    bool Remove(T valor){
+        bool Remove(T valor){
          Registro<T> *a = NULL;
     	 Registro<T> *b = primeiro;
          Registro<T> *c = busca(valor);
@@ -55,9 +55,9 @@ public:
          }
 
    	if(c == primeiro){
-		 primeiro = c->getProximo;
-		 c->getProximo->SetAnterior = primeiro;
-		 primeiro->SetAnterior = NULL;
+         primeiro = c->getProximo();
+         (c->getProximo())->setAnterior(primeiro);
+         primeiro->setAnterior(NULL);
 		 delete c;
 			return true;
 		}
@@ -65,8 +65,8 @@ public:
 
 		 if(c == ultimo){
 		 ultimo = c->getAnterior();
-   		c->getAnterior()->setProximo() = ultimo;
-   		ultimo->setProximo = NULL;
+        c->getAnterior()->setProximo(ultimo);
+        ultimo->setProximo(NULL);
    		delete c;
 		    return true;
 		 }
@@ -74,8 +74,8 @@ public:
 
 	 a = c->getAnterior();
 	 b = c->getProximo();
-         a->SetProximo() = b;
-         b->SetAnterior() = a;
+         a->setProximo(b);
+         b->setAnterior(a);
          delete c;
          return true;
 		
@@ -97,7 +97,8 @@ public:
                             return b;
                                           }
                             b=b->getProximo();
-                }                
+                }
+                return NULL;
     }
 
 };
