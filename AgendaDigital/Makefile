@@ -930,7 +930,9 @@ main.o: main.cpp mainwindow.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qguiapplication.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qinputmethod.h \
 		registro.h \
-		ldde.h
+		ldde.h \
+		lds.h \
+		pessoa.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \

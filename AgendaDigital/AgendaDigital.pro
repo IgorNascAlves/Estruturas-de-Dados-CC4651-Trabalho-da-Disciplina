@@ -10,6 +10,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = AgendaDigital
 TEMPLATE = app
+@
+DEPENDPATH *= $${INCLUDEPATH} #para dar rebuild quando alterar o .h
+@
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings

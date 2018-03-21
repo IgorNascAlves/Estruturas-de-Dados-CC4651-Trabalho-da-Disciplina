@@ -3,12 +3,13 @@
 #include "registro.h"
 #include "ldde.h"
 #include "lds.h"
+#include "pessoa.h"
 
 
 int main(int argc, char *argv[])
 {
     Lds<int> teste;
-
+    teste.inserir(5);
     teste.inserir(10);
     teste.inserir(1);
     teste.remover(5);
