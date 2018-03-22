@@ -43,8 +43,8 @@ public:
 				return true;
 	    }
 	
-	//remocao Sofrera modificacao ainda!!
-        bool Remove(T valor){
+	
+           bool Remove(T valor){
          Registro<T> *a = NULL;
     	 Registro<T> *b = primeiro;
          Registro<T> *c = busca(valor);
@@ -53,29 +53,24 @@ public:
          cout<<"O que voce esta tentando excluir não existe dentro da lista!!"<<endl;
          return false;
          }
+         a = c->getAnterior();
+         b = c->getProximo();
 
-   	if(c == primeiro){
-         primeiro = c->getProximo();
-         (c->getProximo())->setAnterior(primeiro);
-         primeiro->setAnterior(NULL);
-		 delete c;
-			return true;
-		}
-
-
-		 if(c == ultimo){
-		 ultimo = c->getAnterior();
-        c->getAnterior()->setProximo(ultimo);
-        ultimo->setProximo(NULL);
-   		delete c;
-		    return true;
-		 }
-
-
-	 a = c->getAnterior();
-	 b = c->getProximo();
+        if(a){
          a->setProximo(b);
+
+        }else{
+         primeiro = b;
+
+        }
+
+        if(b){
          b->setAnterior(a);
+
+        }else{
+         ultimo = a;
+
+        }
          delete c;
          return true;
 		
