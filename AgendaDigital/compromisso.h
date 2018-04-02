@@ -1,6 +1,7 @@
 #ifndef compromisso_H
 #define compromisso_H
-#include "ldde.h"
+#include <string>
+
 
 
 class Compromisso
@@ -22,7 +23,21 @@ public:
         Mes = 0;
         Ano = 0;
     }
-
+	Compromisso(String tit, String desc, int d, int m , int a ) {
+        Titulo = tit;
+        Descricao = desc;
+        Dia = d;
+        Mes = m;
+        Ano = a;
+    }
+    ~Compromisso(){
+    	delete Titulo;
+    	delete Descricao;
+    	delete dia;
+    	delete mes;
+    	delete ano;
+    	
+	}
     bool setMes(int i){
         if(i<1 && i>12)
             return false;
