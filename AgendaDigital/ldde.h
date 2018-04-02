@@ -1,6 +1,7 @@
 #ifndef LDDE_H
 #define LDDE_H
 #include "registro.h"
+#include "compromisso.h"
 #include <iostream>
 using namespace std;
 
@@ -15,14 +16,27 @@ public:
 	        primeiro = NULL;
 	        ultimo = NULL;
 	    }
-	    
+	    bool operator > (T x, T y){//retorna true se o 1 parametro acontecer depois do segundo
+	    	if(x.getAno() > y.getAno())
+	    		return true;
+	    	else{
+	    		if(x.getMes() > y.getMes() && x.getAno() == y.getAno())
+	    			return true;
+	    		else{
+	    			if(x.getDia() > y.getDia() &&x.getMes() == y.getMes() && x.getAno() == y.getAno())
+	    				return true;
+	    			else
+	    				return false;
+				}
+			}
+		}
 	    bool inserir(T valor){
 	        Registro<T> *a;//antes do primeiro
 	        a = NULL;
 	        Registro<T> *b = NULL;//primeiro
 	        b = primeiro;
 	        Registro<T> *novo = new Registro<T>(valor);
-	            while(b && novo->getConteudo()> b->getConteudo()){
+	            while(b && novo->getConteudo() > b->getConteudo()){
 	                a=b;
 	                b = b->getProximo();
 	            }
