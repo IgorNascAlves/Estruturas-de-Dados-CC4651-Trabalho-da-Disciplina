@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-
+#include "ldde.h"
 using namespace std;
 
 template <typename T>
@@ -10,7 +10,7 @@ private:
     string nome;
     string login;
     string senha;
-
+	Ldde <Compromisso> tarefas;
 public:
     Pessoa(){}
 
