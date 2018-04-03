@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
     teste.inserir(Compromisso("Dormir mais", "Ninguem e de ferro", 7, 5, 2018));
     teste.inserir(Compromisso("Ir a fei", "aula do tio patinhas", 23, 3, 2018));
     teste.inserir(Compromisso("Cinema", "guerra civil", 7, 2, 2018));
+    teste.inserir(Compromisso("Jogar", "Fifa 18", 32, 15, 2018));
     teste.imprimir();
     cout<<"-------------------------------------------------\n";
     teste.remove("Ir a feira");
