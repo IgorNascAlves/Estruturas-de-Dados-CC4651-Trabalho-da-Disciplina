@@ -2,89 +2,72 @@
 #define compromisso_H
 #include <string>
 
+using namespace std;
 
 
-class Compromisso
-{
+class Compromisso{
+    private:
+        string titulo;
+        string descricao;
+        int dia;
+        int mes;
+        int ano;
 
-private:
+    public:
+        Compromisso() {
+            titulo = "";
+            descricao = "";
+            dia = 0;
+            mes = 0;
+            ano = 0;
+        }
+        Compromisso(string tit, string desc, int d, int m , int a ) {
+            titulo = tit;
+            descricao = desc;
+            dia = d;
+            mes = m;
+            ano = a;
+        }
+        bool setMes(int i){
+            if(i<1 && i>12)
+                return false;
+            mes = i;
+            return true;
 
-    string Titulo;
-    string Descricao;
-    int Dia;
-    int Mes;
-    int Ano;
+        }
 
-public:
-    Compromisso() {
-        Titulo = 0;
-        Descricao = 0;
-        Dia = 0;
-        Mes = 0;
-        Ano = 0;
-    }
-	Compromisso(String tit, String desc, int d, int m , int a ) {
-        Titulo = tit;
-        Descricao = desc;
-        Dia = d;
-        Mes = m;
-        Ano = a;
-    }
-    ~Compromisso(){
-    	delete Titulo;
-    	delete Descricao;
-    	delete dia;
-    	delete mes;
-    	delete ano;
-    	
-	}
-    bool setMes(int i){
-        if(i<1 && i>12)
-            return false;
-        Mes = i;
-        return true;
-
-    }
-
-    int getMes(){
-        return Mes;
-    }
+        int getMes(){
+            return mes;
+        }
 
 
-    void setDia(int i){
-        Dia = i;
+        void setDia(int i){
+            dia = i;
 
-    }
-    int getDia(){
-        return Dia;
-    }
-    void setAno(int i){
-        Ano = i;
+        }
+        int getDia(){
+            return dia;
+        }
+        void setAno(int i){
+            ano = i;
 
-    }
-    int getAno(){
-        return Ano;
-    }
+        }
+        int getAno(){
+            return ano;
+        }
 
-    void setTitulo(string a){
-        Titulo = a;
-    }
-    string getTitulo(){
-        return Titulo;
-    }
-    void setDescricao(string a){
-        Descricao = a;
-    }
-    string getDescricao(){
-        return Descricao;
-    }
-
-
-
-
-
-
+        void setTitulo(string a){
+            titulo = a;
+        }
+        string getTitulo(){
+            return titulo;
+        }
+        void setDescricao(string a){
+            descricao = a;
+        }
+        string getDescricao(){
+            return descricao;
+        }
 };
-
 
 #endif // compromisso_H
