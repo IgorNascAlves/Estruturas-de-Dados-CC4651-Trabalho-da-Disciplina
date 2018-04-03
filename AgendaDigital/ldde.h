@@ -5,8 +5,8 @@
 #include <iostream>
 using namespace std;
 
-template <typename T>
-bool operator > (T x, T y){//retorna true se o 1 parametro acontecer depois do segundo
+
+bool operator > (Compromisso x, Compromisso y){//retorna true se o 1 parametro acontecer depois do segundo
     if(x.getAno() > y.getAno())
         return true;
     else{
@@ -58,7 +58,10 @@ public:
 
 				return true;
 	    }
-	
+        ~Ldde(){
+            delete primeiro;
+            delete ultimo;
+        }
 	
            bool Remove(T valor){
          Registro<T> *a = NULL;
@@ -90,21 +93,34 @@ public:
          delete c;
          return true;
 		
-	}
+        }
 		
 	    void imprimir(){
 	        Registro<T> *b = primeiro;//primeiro
-			int i = 0;
 	        while(b){
-	            cout<<i<<" - valor e : "<<b->getConteudo()<<"\n";
+                cout<<b->getConteudo().getDia();
+                cout<<"/"<<b->getConteudo().getMes();
+                cout<<"/"<<b->getConteudo().getAno()<<"\n";
+                cout<<"Titulo   :"<<b->getConteudo().getTitulo()<<"\n";
+                cout<<"Descricao:"<<b->getConteudo().getDescricao();
+                cout<<"\n\n";
 	            b = b->getProximo();
-	            i++;
 	        }
 	    }
-	  Registro<T> *busca(T valor){
-                Registro<T> *b = primeiro;
+      Registro<Compromisso> *buscaData(Compromisso data){//recebe uma data e retorna o compromisso do dia
+                Registro<Compromisso> *b = primeiro;
                 while(b){
-                         if(b->getConteudo()==valor){
+                         if(b->getConteudo().getDia()== data.getDia() && b->getConteudo().getMes() ==  data.getMes() && b->getConteudo().getAno() ==  data.getAno())
+                            return b;
+
+                            b=b->getProximo();
+                }
+                return NULL;
+    }
+      Registro<Compromisso> *buscaTitulo(string t){// recebe uma string e retorna o compromisso com este mesmo titulo
+                Registro<Compromisso> *b = primeiro;
+                while(b){
+                         if(b->getConteudo().getTitulo()==t){
                             return b;
                                           }
                             b=b->getProximo();
