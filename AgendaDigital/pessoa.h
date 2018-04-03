@@ -20,8 +20,8 @@ public:
         senha = s;
     }
 
-    Ldde<Compromisso> getTarefas(){
-        return tarefas;
+    Ldde<Compromisso>* getTarefas(){
+        return &tarefas;
     }
 
 
