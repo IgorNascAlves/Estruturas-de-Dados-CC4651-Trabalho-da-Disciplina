@@ -10,13 +10,15 @@ private:
     string nome;
     string login;
     string senha;
-	Ldde <Compromisso> tarefas;
-
-	
+    Ldde <Compromisso> tarefas;
 public:
     Pessoa(): nome(""), login(""), senha(""){
     }
-
+    Pessoa(string n, string l, string s): nome(n), login(l), senha(s){
+    }
+    Ldde getTarefas(){
+        return tarefas;
+    }
 	
 
     void getNome(){
