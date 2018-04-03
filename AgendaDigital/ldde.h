@@ -5,6 +5,22 @@
 #include <iostream>
 using namespace std;
 
+template <typename T>
+bool operator > (T x, T y){//retorna true se o 1 parametro acontecer depois do segundo
+    if(x.getAno() > y.getAno())
+        return true;
+    else{
+        if(x.getMes() > y.getMes() && x.getAno() == y.getAno())
+            return true;
+        else{
+            if(x.getDia() > y.getDia() &&x.getMes() == y.getMes() && x.getAno() == y.getAno())
+                return true;
+            else
+                return false;
+        }
+    }
+}
+
 
 template <typename T>
 class Ldde{
@@ -12,24 +28,10 @@ private:
     Registro<T> *primeiro;
     Registro<T> *ultimo;
 public:
-    	    Ldde(){
+        Ldde(){
 	        primeiro = NULL;
 	        ultimo = NULL;
 	    }
-	    bool operator > (T x, T y){//retorna true se o 1 parametro acontecer depois do segundo
-	    	if(x.getAno() > y.getAno())
-	    		return true;
-	    	else{
-	    		if(x.getMes() > y.getMes() && x.getAno() == y.getAno())
-	    			return true;
-	    		else{
-	    			if(x.getDia() > y.getDia() &&x.getMes() == y.getMes() && x.getAno() == y.getAno())
-	    				return true;
-	    			else
-	    				return false;
-				}
-			}
-		}
 	    bool inserir(T valor){
 	        Registro<T> *a;//antes do primeiro
 	        a = NULL;
@@ -111,6 +113,5 @@ public:
     }
 
 };
-
 
 #endif // LDDE_H
