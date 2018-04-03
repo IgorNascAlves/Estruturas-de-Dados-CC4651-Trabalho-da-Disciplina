@@ -20,8 +20,6 @@ bool operator > (Compromisso x, Compromisso y){//retorna true se o 1 parametro a
         }
     }
 }
-
-
 template <typename T>
 class Ldde{
 private:
@@ -58,41 +56,43 @@ public:
 
 				return true;
 	    }
+        /*
         ~Ldde(){
             delete primeiro;
             delete ultimo;
         }
+        */
 	
-           bool Remove(T valor){
-         Registro<T> *a = NULL;
-    	 Registro<T> *b = primeiro;
-         Registro<T> *c = busca(valor);
+         bool remove(string t){
+             Registro<T> *a = NULL;
+             Registro<T> *b = primeiro;
+             Registro<T> *c = buscaTitulo(t);
 
-         if(!c){
-         cout<<"O que voce esta tentando excluir não existe dentro da lista!!"<<endl;
-         return false;
-         }
-         a = c->getAnterior();
-         b = c->getProximo();
+             if(!c){
+             cout<<"O que voce esta tentando excluir não existe dentro da lista!!"<<endl;
+             return false;
+             }
+             a = c->getAnterior();
+             b = c->getProximo();
 
-        if(a){
-         a->setProximo(b);
+            if(a){
+             a->setProximo(b);
 
-        }else{
-         primeiro = b;
+            }else{
+             primeiro = b;
 
-        }
+            }
 
-        if(b){
-         b->setAnterior(a);
+            if(b){
+             b->setAnterior(a);
 
-        }else{
-         ultimo = a;
+            }else{
+             ultimo = a;
 
-        }
-         delete c;
-         return true;
-		
+            }
+             delete c;
+             return true;
+
         }
 		
 	    void imprimir(){
