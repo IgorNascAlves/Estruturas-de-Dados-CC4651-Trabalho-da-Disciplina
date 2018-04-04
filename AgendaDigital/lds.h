@@ -86,7 +86,7 @@ class Lds{
                     return false;
             int j=0;
             for(j=n ; j>i; j=j-1)
-                v[j] = v[j-1];
+                v[j] = v[j-1]; // linha com problema
             v[i] = valor;
             return true;
         }

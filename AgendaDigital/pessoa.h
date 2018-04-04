@@ -51,4 +51,24 @@ public:
 
 
 };
+bool operator ==(Pessoa a, Pessoa b){
+    if(a.getLogin() == b.getLogin())
+        return true;
+    return false;
+}
+bool operator <(Pessoa a, Pessoa b){
+    if(a.getLogin() < b.getLogin())
+        return true;
+    return false;
+}
+//void operator =(Pessoa &a, Pessoa &b){
+//    a.setLogin(b.getLogin());
+//    a.setNome(b.getNome());
+//    a.setSenha(b.getSenha());
+//    a.getTarefas()->inserir(b.getTarefas());
+//}
+ostream &operator <<(ostream& a, Pessoa b){
+    a<<"Nome: "<<b.getNome()<<" Senha: "<<b.getSenha()<<endl;
+    return a;
+}
 #endif // PESSOA_H
