@@ -40,6 +40,7 @@ public:
 	                a=b;
 	                b = b->getProximo();
 	            }
+		    
 				if(a)
                     a->setProximo(novo);
 				else{ // caso o valor seja o menor da fila
@@ -50,9 +51,16 @@ public:
 	                b->setAnterior(novo);
 	           	else
 					ultimo = novo;
-					
+		    
+		   		
 				novo->setProximo(b);
 				novo->setAnterior(a);
+		    
+		    
+		    if(dia>31 || dia<1 || mes>12 || mes<1 || ano<0){
+		   	cout<<"A data eh invalida"<< endl;
+			   return;
+		   }
 
 				return true;
 	    }
