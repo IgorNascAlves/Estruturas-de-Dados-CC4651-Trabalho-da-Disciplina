@@ -57,10 +57,10 @@ public:
 				novo->setAnterior(a);
 		    
 		    
-		    if(dia>31 || dia<1 || mes>12 || mes<1 || ano<0){
-		   	cout<<"A data eh invalida"<< endl;
-			   return false;
-		   }
+//		    if(dia>31 || dia<1 || mes>12 || mes<1 || ano<0){
+//		   	cout<<"A data eh invalida"<< endl;
+//			   return false;
+//		   }
 
 				return true;
 	    }
