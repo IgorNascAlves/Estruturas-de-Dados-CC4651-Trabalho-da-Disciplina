@@ -29,7 +29,7 @@ public:
         return nome;
     }
 
-    string setNome(string nome){
+    void setNome(string nome){
         this->nome = nome;
     }
 
@@ -37,7 +37,7 @@ public:
         return login;
     }
 
-    string setLogin(string login){
+    void setLogin(string login){
         this->login = login;
     }
 
@@ -45,7 +45,7 @@ public:
         return senha;
     }
 
-    string setSenha(string senha){
+    void setSenha(string senha){
         this->senha = senha;
     }
 
