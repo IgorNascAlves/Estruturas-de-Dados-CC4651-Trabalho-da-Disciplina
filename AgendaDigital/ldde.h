@@ -59,7 +59,7 @@ public:
 		    
 		    if(dia>31 || dia<1 || mes>12 || mes<1 || ano<0){
 		   	cout<<"A data eh invalida"<< endl;
-			   return;
+			   return false;
 		   }
 
 				return true;
