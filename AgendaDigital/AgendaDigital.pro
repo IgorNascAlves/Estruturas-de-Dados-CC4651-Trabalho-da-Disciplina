@@ -36,7 +36,8 @@ HEADERS += \
     ldde.h \
     lds.h \
     registro.h \
-    compromisso.h
+    compromisso.h \
+    checklogin.h
 
 FORMS += \
         mainwindow.ui

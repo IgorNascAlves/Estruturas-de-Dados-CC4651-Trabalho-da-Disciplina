@@ -61,7 +61,8 @@ public:
     QGridLayout *gridLayout_3;
     QPushButton *btnDeletar;
     QPushButton *btnSalvar;
-    QPushButton *btnVoltar;
+    QPushButton *btnEditar;
+    QPushButton *btnBuscar;
     QWidget *gridLayoutWidget_4;
     QGridLayout *gridLayout_4;
     QLineEdit *lblTitulo;
@@ -183,7 +184,7 @@ public:
         gbCompromisso->setGeometry(QRect(310, 20, 381, 201));
         gridLayoutWidget_3 = new QWidget(gbCompromisso);
         gridLayoutWidget_3->setObjectName(QStringLiteral("gridLayoutWidget_3"));
-        gridLayoutWidget_3->setGeometry(QRect(60, 170, 281, 27));
+        gridLayoutWidget_3->setGeometry(QRect(20, 170, 351, 27));
         gridLayout_3 = new QGridLayout(gridLayoutWidget_3);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -192,17 +193,22 @@ public:
         btnDeletar = new QPushButton(gridLayoutWidget_3);
         btnDeletar->setObjectName(QStringLiteral("btnDeletar"));
 
-        gridLayout_3->addWidget(btnDeletar, 3, 2, 1, 1);
+        gridLayout_3->addWidget(btnDeletar, 3, 3, 1, 1);
 
         btnSalvar = new QPushButton(gridLayoutWidget_3);
         btnSalvar->setObjectName(QStringLiteral("btnSalvar"));
 
-        gridLayout_3->addWidget(btnSalvar, 3, 1, 1, 1);
+        gridLayout_3->addWidget(btnSalvar, 3, 2, 1, 1);
 
-        btnVoltar = new QPushButton(gridLayoutWidget_3);
-        btnVoltar->setObjectName(QStringLiteral("btnVoltar"));
+        btnEditar = new QPushButton(gridLayoutWidget_3);
+        btnEditar->setObjectName(QStringLiteral("btnEditar"));
 
-        gridLayout_3->addWidget(btnVoltar, 3, 0, 1, 1);
+        gridLayout_3->addWidget(btnEditar, 3, 0, 1, 1);
+
+        btnBuscar = new QPushButton(gridLayoutWidget_3);
+        btnBuscar->setObjectName(QStringLiteral("btnBuscar"));
+
+        gridLayout_3->addWidget(btnBuscar, 3, 1, 1, 1);
 
         gridLayoutWidget_4 = new QWidget(gbCompromisso);
         gridLayoutWidget_4->setObjectName(QStringLiteral("gridLayoutWidget_4"));
@@ -277,7 +283,8 @@ public:
         gbCompromisso->setTitle(QApplication::translate("MainWindow", "Compromisso", nullptr));
         btnDeletar->setText(QApplication::translate("MainWindow", "Deletar", nullptr));
         btnSalvar->setText(QApplication::translate("MainWindow", "Salvar", nullptr));
-        btnVoltar->setText(QApplication::translate("MainWindow", "Voltar", nullptr));
+        btnEditar->setText(QApplication::translate("MainWindow", "Editar", nullptr));
+        btnBuscar->setText(QApplication::translate("MainWindow", "Buscar", nullptr));
         label_8->setText(QApplication::translate("MainWindow", "Descri\303\247\303\243o:", nullptr));
         label_9->setText(QApplication::translate("MainWindow", "Nome:", nullptr));
         label_10->setText(QApplication::translate("MainWindow", "Data:", nullptr));

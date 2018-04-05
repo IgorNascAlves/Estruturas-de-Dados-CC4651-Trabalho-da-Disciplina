@@ -260,21 +260,21 @@
     <widget class="QWidget" name="gridLayoutWidget_3">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>20</x>
        <y>170</y>
-       <width>281</width>
+       <width>351</width>
        <height>27</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
-      <item row="3" column="2">
+      <item row="3" column="3">
        <widget class="QPushButton" name="btnDeletar">
         <property name="text">
          <string>Deletar</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
+      <item row="3" column="2">
        <widget class="QPushButton" name="btnSalvar">
         <property name="text">
          <string>Salvar</string>
@@ -282,9 +282,16 @@
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QPushButton" name="btnVoltar">
+       <widget class="QPushButton" name="btnEditar">
         <property name="text">
-         <string>Voltar</string>
+         <string>Editar</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="btnBuscar">
+        <property name="text">
+         <string>Buscar</string>
         </property>
        </widget>
       </item>

@@ -6,6 +6,7 @@
 #include "pessoa.h"
 #include "ldde.h"
 
+#include "checklogin.h"
 #include <string.h>
 #include "registro.h"
 #include "lds.h"
@@ -28,6 +29,7 @@ public:
 private slots:
     void on_btnEntrar_clicked();
     void on_btnCadastro_clicked();
+    void on_btnSalvar_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -3,6 +3,7 @@
 #include <string>
 #include<lds.h>
 #include<pessoa.h>
+#include <QMessageBox>
 
 
 using namespace std;
@@ -16,6 +17,9 @@ class checkLogin{
             for(int i =0;i<=v.getN();i++)
             {
                 if(v[i]->getLogin() == usr){
+                    QMessageBox msgBox;
+                    msgBox.setText("Ja existe um usuario com esse nome.");
+                    msgBox.exec();
                     cout<<"Ja existe um usuario com esse nome"<<endl;
                     return false;
                 }
