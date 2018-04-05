@@ -44,10 +44,10 @@ class Lds{
         void removerInd(int i){
             remover(v[i]);
         }
-        T operator[](int i){
+        T* operator[](int i){
             if(i>=n)
-                return v[0];
-           return v[i];
+                return v;
+           return v+i;
         }
         bool operator +(T valor){
             return inserir(valor);
