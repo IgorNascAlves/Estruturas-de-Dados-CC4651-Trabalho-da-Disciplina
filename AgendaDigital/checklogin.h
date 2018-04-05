@@ -12,15 +12,16 @@ class checkLogin{
     private:
 
     public:
-        bool checaLogin(Lds<Pessoa>Cadastrados,string usr,string nome,string senha){
-            for(int i =0;i<=Cadastrados.getN();i++)
+        bool checaLogin(Lds<Pessoa> &v,string usr,string nome,string senha){
+            for(int i =0;i<=v.getN();i++)
             {
-                if (Cadastrados[i]->login == usr)
+                if(v[i]->getLogin() == usr){
                     cout<<"Ja existe um usuario com esse nome"<<endl;
                     return false;
+                }
             }
 
-            Cadastrados.inserir(Pessoa(nome,usr,senha));)
+            v.inserir(Pessoa(nome,usr,senha));
             return true;
     }
 
