@@ -32,7 +32,7 @@ void MainWindow::on_btnCadastro_clicked()
     string nome = (ui->lblNome->text()).toStdString();
     checklogin teste;
    
-    if(teste.checaLogin(Cadastrados,usr,senha,nome)){
+    if(teste.checaLogin(Cadastrados,nome,usr,senha)){
     
         Cadastrados[0]->getTarefas()->inserir(Compromisso("fsdfsd","fsdffsd",10,11,2020));
         Cadastrados[0]->getTarefas()->inserir(Compromisso("dasda","dasd",01,11,2020));
