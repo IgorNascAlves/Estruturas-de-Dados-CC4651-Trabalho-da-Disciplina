@@ -71,6 +71,7 @@ class Lds{
                 return false;
             tamAloc = tamAloc*2;
             copiar(v,v2);
+            v = v2;
             return true;
         }
         bool desaloca(){
@@ -80,6 +81,7 @@ class Lds{
                 return false;
             tamAloc = tamAloc2;
             copiar(v,v2);
+            v = v2;
             return true;
         }
         bool empurra(int i,T valor){
@@ -87,11 +89,9 @@ class Lds{
                 if(!realoca())
                     return false;
             int j=0;
-//            T teste[tamAloc]; // teste para tentar descobrir o problema
-//            for(int i=0;i<n;i++)
-//                teste[i] = v[i];
             for(j=n ; j>i; j=j-1)
                 v[j] = v[j-1]; // linha com problema
+
             v[i] = valor;
             return true;
         }
