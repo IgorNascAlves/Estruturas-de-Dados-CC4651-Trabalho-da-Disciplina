@@ -91,7 +91,7 @@ class Lds{
 //            for(int i=0;i<n;i++)
 //                teste[i] = v[i];
             for(j=n ; j>i; j=j-1)
-                v[j] = teste[0]; // linha com problema
+                v[j] = v[j-1]; // linha com problema
             v[i] = valor;
             return true;
         }
