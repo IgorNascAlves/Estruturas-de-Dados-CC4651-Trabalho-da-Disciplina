@@ -1,5 +1,7 @@
 #ifndef Lds_H
 #define Lds_H
+#include <iostream>
+using namespace std;
 template <class T>
 class Lds{
     private:
@@ -51,11 +53,11 @@ class Lds{
             return inserir(valor);
         }
         ~Lds(){
-            int i = 0;
-            while(i<n){
-                removerInd(i);
-                i++;
-            }
+//            int i = 0;
+//            while(i<n){
+//                removerInd(i);
+//                i++;
+//            }
         }
 
     private:
@@ -85,8 +87,11 @@ class Lds{
                 if(!realoca())
                     return false;
             int j=0;
+//            T teste[tamAloc]; // teste para tentar descobrir o problema
+//            for(int i=0;i<n;i++)
+//                teste[i] = v[i];
             for(j=n ; j>i; j=j-1)
-                v[j] = v[j-1]; // linha com problema
+                v[j] = teste[0]; // linha com problema
             v[i] = valor;
             return true;
         }

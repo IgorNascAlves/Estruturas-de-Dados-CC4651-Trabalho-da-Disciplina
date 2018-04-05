@@ -117,7 +117,7 @@
        <enum>QLayout::SetMinimumSize</enum>
       </property>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_2"/>
+       <widget class="QLineEdit" name="lblSenha"/>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_6">
@@ -134,7 +134,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit"/>
+       <widget class="QLineEdit" name="lblUser"/>
       </item>
       <item row="2" column="1">
        <widget class="QPushButton" name="btnEntrar">
@@ -151,6 +151,29 @@
        </widget>
       </item>
      </layout>
+    </widget>
+    <widget class="QLineEdit" name="lblNome">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>160</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Nome:</string>
+     </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="gbOpcoes">
@@ -176,21 +199,21 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="btnConsulta">
         <property name="text">
          <string>Consulta</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="btnAdd">
         <property name="text">
          <string>Adicionar</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="btnAll">
         <property name="text">
          <string>Exibir Todos</string>
         </property>
@@ -245,21 +268,21 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_5">
+       <widget class="QPushButton" name="btnDeletar">
         <property name="text">
          <string>Deletar</string>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="btnSalvar">
         <property name="text">
          <string>Salvar</string>
         </property>
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="btnVoltar">
         <property name="text">
          <string>Voltar</string>
         </property>
@@ -278,7 +301,7 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_4">
       <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_4"/>
+       <widget class="QLineEdit" name="lblTitulo"/>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_8">
@@ -288,7 +311,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_3"/>
+       <widget class="QLineEdit" name="lblData"/>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_9">
@@ -305,7 +328,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QTextEdit" name="textEdit"/>
+       <widget class="QTextEdit" name="lblDes"/>
       </item>
      </layout>
     </widget>

@@ -69,5 +69,19 @@ class Compromisso{
             return descricao;
         }
 };
+bool operator > (Compromisso x, Compromisso y){//retorna true se o 1 parametro acontecer depois do segundo
+    if(x.getAno() > y.getAno())
+        return true;
+    else{
+        if(x.getMes() > y.getMes() && x.getAno() == y.getAno())
+            return true;
+        else{
+            if(x.getDia() > y.getDia() &&x.getMes() == y.getMes() && x.getAno() == y.getAno())
+                return true;
+            else
+                return false;
+        }
+    }
+}
 
 #endif // compromisso_H

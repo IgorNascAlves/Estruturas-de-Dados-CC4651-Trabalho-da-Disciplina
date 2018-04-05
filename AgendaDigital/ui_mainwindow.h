@@ -40,34 +40,36 @@ public:
     QGroupBox *gbEntrada;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QLineEdit *lineEdit_2;
+    QLineEdit *lblSenha;
     QLabel *label_6;
     QPushButton *btnCadastro;
-    QLineEdit *lineEdit;
+    QLineEdit *lblUser;
     QPushButton *btnEntrar;
     QLabel *label_7;
+    QLineEdit *lblNome;
+    QLabel *label_11;
     QGroupBox *gbOpcoes;
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    QPushButton *btnConsulta;
+    QPushButton *btnAdd;
+    QPushButton *btnAll;
     QGroupBox *gbExibir;
     QTableWidget *tblExibir;
     QGroupBox *gbCompromisso;
     QWidget *gridLayoutWidget_3;
     QGridLayout *gridLayout_3;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_6;
+    QPushButton *btnDeletar;
+    QPushButton *btnSalvar;
+    QPushButton *btnVoltar;
     QWidget *gridLayoutWidget_4;
     QGridLayout *gridLayout_4;
-    QLineEdit *lineEdit_4;
+    QLineEdit *lblTitulo;
     QLabel *label_8;
-    QLineEdit *lineEdit_3;
+    QLineEdit *lblData;
     QLabel *label_9;
     QLabel *label_10;
-    QTextEdit *textEdit;
+    QTextEdit *lblDes;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -108,10 +110,10 @@ public:
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setSizeConstraint(QLayout::SetMinimumSize);
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        lineEdit_2 = new QLineEdit(gridLayoutWidget);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lblSenha = new QLineEdit(gridLayoutWidget);
+        lblSenha->setObjectName(QStringLiteral("lblSenha"));
 
-        gridLayout->addWidget(lineEdit_2, 1, 1, 1, 1);
+        gridLayout->addWidget(lblSenha, 1, 1, 1, 1);
 
         label_6 = new QLabel(gridLayoutWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
@@ -123,10 +125,10 @@ public:
 
         gridLayout->addWidget(btnCadastro, 2, 0, 1, 1);
 
-        lineEdit = new QLineEdit(gridLayoutWidget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lblUser = new QLineEdit(gridLayoutWidget);
+        lblUser->setObjectName(QStringLiteral("lblUser"));
 
-        gridLayout->addWidget(lineEdit, 0, 1, 1, 1);
+        gridLayout->addWidget(lblUser, 0, 1, 1, 1);
 
         btnEntrar = new QPushButton(gridLayoutWidget);
         btnEntrar->setObjectName(QStringLiteral("btnEntrar"));
@@ -138,6 +140,12 @@ public:
 
         gridLayout->addWidget(label_7, 0, 0, 1, 1);
 
+        lblNome = new QLineEdit(gbEntrada);
+        lblNome->setObjectName(QStringLiteral("lblNome"));
+        lblNome->setGeometry(QRect(110, 160, 113, 25));
+        label_11 = new QLabel(gbEntrada);
+        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setGeometry(QRect(20, 160, 67, 17));
         gbOpcoes = new QGroupBox(centralWidget);
         gbOpcoes->setObjectName(QStringLiteral("gbOpcoes"));
         gbOpcoes->setGeometry(QRect(10, 220, 271, 181));
@@ -149,20 +157,20 @@ public:
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(gridLayoutWidget_2);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        btnConsulta = new QPushButton(gridLayoutWidget_2);
+        btnConsulta->setObjectName(QStringLiteral("btnConsulta"));
 
-        gridLayout_2->addWidget(pushButton, 0, 0, 1, 1);
+        gridLayout_2->addWidget(btnConsulta, 0, 0, 1, 1);
 
-        pushButton_2 = new QPushButton(gridLayoutWidget_2);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        btnAdd = new QPushButton(gridLayoutWidget_2);
+        btnAdd->setObjectName(QStringLiteral("btnAdd"));
 
-        gridLayout_2->addWidget(pushButton_2, 1, 0, 1, 1);
+        gridLayout_2->addWidget(btnAdd, 1, 0, 1, 1);
 
-        pushButton_3 = new QPushButton(gridLayoutWidget_2);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        btnAll = new QPushButton(gridLayoutWidget_2);
+        btnAll->setObjectName(QStringLiteral("btnAll"));
 
-        gridLayout_2->addWidget(pushButton_3, 2, 0, 1, 1);
+        gridLayout_2->addWidget(btnAll, 2, 0, 1, 1);
 
         gbExibir = new QGroupBox(centralWidget);
         gbExibir->setObjectName(QStringLiteral("gbExibir"));
@@ -181,20 +189,20 @@ public:
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        pushButton_5 = new QPushButton(gridLayoutWidget_3);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        btnDeletar = new QPushButton(gridLayoutWidget_3);
+        btnDeletar->setObjectName(QStringLiteral("btnDeletar"));
 
-        gridLayout_3->addWidget(pushButton_5, 3, 2, 1, 1);
+        gridLayout_3->addWidget(btnDeletar, 3, 2, 1, 1);
 
-        pushButton_4 = new QPushButton(gridLayoutWidget_3);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        btnSalvar = new QPushButton(gridLayoutWidget_3);
+        btnSalvar->setObjectName(QStringLiteral("btnSalvar"));
 
-        gridLayout_3->addWidget(pushButton_4, 3, 1, 1, 1);
+        gridLayout_3->addWidget(btnSalvar, 3, 1, 1, 1);
 
-        pushButton_6 = new QPushButton(gridLayoutWidget_3);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        btnVoltar = new QPushButton(gridLayoutWidget_3);
+        btnVoltar->setObjectName(QStringLiteral("btnVoltar"));
 
-        gridLayout_3->addWidget(pushButton_6, 3, 0, 1, 1);
+        gridLayout_3->addWidget(btnVoltar, 3, 0, 1, 1);
 
         gridLayoutWidget_4 = new QWidget(gbCompromisso);
         gridLayoutWidget_4->setObjectName(QStringLiteral("gridLayoutWidget_4"));
@@ -204,20 +212,20 @@ public:
         gridLayout_4->setContentsMargins(11, 11, 11, 11);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        lineEdit_4 = new QLineEdit(gridLayoutWidget_4);
-        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+        lblTitulo = new QLineEdit(gridLayoutWidget_4);
+        lblTitulo->setObjectName(QStringLiteral("lblTitulo"));
 
-        gridLayout_4->addWidget(lineEdit_4, 1, 1, 1, 1);
+        gridLayout_4->addWidget(lblTitulo, 1, 1, 1, 1);
 
         label_8 = new QLabel(gridLayoutWidget_4);
         label_8->setObjectName(QStringLiteral("label_8"));
 
         gridLayout_4->addWidget(label_8, 2, 0, 1, 1);
 
-        lineEdit_3 = new QLineEdit(gridLayoutWidget_4);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        lblData = new QLineEdit(gridLayoutWidget_4);
+        lblData->setObjectName(QStringLiteral("lblData"));
 
-        gridLayout_4->addWidget(lineEdit_3, 0, 1, 1, 1);
+        gridLayout_4->addWidget(lblData, 0, 1, 1, 1);
 
         label_9 = new QLabel(gridLayoutWidget_4);
         label_9->setObjectName(QStringLiteral("label_9"));
@@ -229,10 +237,10 @@ public:
 
         gridLayout_4->addWidget(label_10, 0, 0, 1, 1);
 
-        textEdit = new QTextEdit(gridLayoutWidget_4);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
+        lblDes = new QTextEdit(gridLayoutWidget_4);
+        lblDes->setObjectName(QStringLiteral("lblDes"));
 
-        gridLayout_4->addWidget(textEdit, 2, 1, 1, 1);
+        gridLayout_4->addWidget(lblDes, 2, 1, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(MainWindow);
@@ -260,15 +268,16 @@ public:
         btnCadastro->setText(QApplication::translate("MainWindow", "Cadastro", nullptr));
         btnEntrar->setText(QApplication::translate("MainWindow", "Entrar", nullptr));
         label_7->setText(QApplication::translate("MainWindow", "Usuario:", nullptr));
+        label_11->setText(QApplication::translate("MainWindow", "Nome:", nullptr));
         gbOpcoes->setTitle(QApplication::translate("MainWindow", "Op\303\247\303\265es", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "Consulta", nullptr));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Adicionar", nullptr));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Exibir Todos", nullptr));
+        btnConsulta->setText(QApplication::translate("MainWindow", "Consulta", nullptr));
+        btnAdd->setText(QApplication::translate("MainWindow", "Adicionar", nullptr));
+        btnAll->setText(QApplication::translate("MainWindow", "Exibir Todos", nullptr));
         gbExibir->setTitle(QApplication::translate("MainWindow", "Exibir Todos", nullptr));
         gbCompromisso->setTitle(QApplication::translate("MainWindow", "Compromisso", nullptr));
-        pushButton_5->setText(QApplication::translate("MainWindow", "Deletar", nullptr));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Salvar", nullptr));
-        pushButton_6->setText(QApplication::translate("MainWindow", "Voltar", nullptr));
+        btnDeletar->setText(QApplication::translate("MainWindow", "Deletar", nullptr));
+        btnSalvar->setText(QApplication::translate("MainWindow", "Salvar", nullptr));
+        btnVoltar->setText(QApplication::translate("MainWindow", "Voltar", nullptr));
         label_8->setText(QApplication::translate("MainWindow", "Descri\303\247\303\243o:", nullptr));
         label_9->setText(QApplication::translate("MainWindow", "Nome:", nullptr));
         label_10->setText(QApplication::translate("MainWindow", "Data:", nullptr));

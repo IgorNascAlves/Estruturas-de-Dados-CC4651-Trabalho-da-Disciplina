@@ -6,6 +6,9 @@
 #include "pessoa.h"
 #include <iostream>
 #include <cstdlib>
+
+
+
 int main(int argc, char *argv[])
 {
 
@@ -22,24 +25,22 @@ int main(int argc, char *argv[])
 //    teste.remove("Ir a feira");
 
 //    teste.imprimir();
-//    teste.inserir(5);
-//    teste.imprimir();
 
 //    Pessoa x;
 //    x.getTarefas()->inserir(Compromisso("Cinema", "guerra civil",10, 10, 2030));
 //    x.getTarefas()->imprimir();
 
-//    Lds<Pessoa> Cadastrados;
-//    Cadastrados.inserir(Pessoa ("Igor","Popo","012345"));
-//    Cadastrados.inserir(Pessoa ("Alexandre","Japa","543210"));
-//    Cadastrados.imprimir();
+    //BLOCO QUE GERA ERRO UM
+    Lds<Pessoa> Cadastrados;
+    Cadastrados.inserir(Pessoa ("Igor","Popo","012345"));
+    Cadastrados.inserir(Pessoa ("Alexandre","Japa","543210"));
+    Cadastrados.imprimir();
 
     return 0;
 
-    /*
-    MainWindow w;
-    w.show();   //parte visual
-    */
+// ERRO DOIS ESTA NO mainwindow.h
+//    MainWindow w;
+//    w.show();   //parte visual
     QApplication a(argc, argv);
     return a.exec();
 }

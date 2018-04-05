@@ -47,8 +47,7 @@ public:
 
     void setSenha(string senha){
         this->senha = senha;
-    }
-
+    }   
 
 };
 bool operator ==(Pessoa a, Pessoa b){
@@ -61,12 +60,7 @@ bool operator <(Pessoa a, Pessoa b){
         return true;
     return false;
 }
-//void operator =(Pessoa &a, Pessoa &b){
-//    a.setLogin(b.getLogin());
-//    a.setNome(b.getNome());
-//    a.setSenha(b.getSenha());
-//    a.getTarefas()->inserir(b.getTarefas());
-//}
+
 ostream &operator <<(ostream& a, Pessoa b){
     a<<"Nome: "<<b.getNome()<<" Senha: "<<b.getSenha()<<endl;
     return a;
