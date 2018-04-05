@@ -12,7 +12,7 @@ class checkLogin{
     private:
 
     public:
-        bool checaLogin(Lds<Pessoa> &v,string usr,string nome,string senha){
+        bool checaLogin(Lds<Pessoa> &v,string nome,string usr,string senha){
             for(int i =0;i<=v.getN();i++)
             {
                 if(v[i]->getLogin() == usr){
