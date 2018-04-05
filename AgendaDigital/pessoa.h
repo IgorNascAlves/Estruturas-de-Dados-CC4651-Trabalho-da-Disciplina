@@ -47,22 +47,23 @@ public:
 
     void setSenha(string senha){
         this->senha = senha;
-    }   
+    }
+
 
 };
-bool operator ==(Pessoa a, Pessoa b){
+inline bool operator ==(Pessoa a, Pessoa b){
     if(a.getLogin() == b.getLogin())
         return true;
     return false;
 }
-bool operator <(Pessoa a, Pessoa b){
+inline bool operator <(Pessoa a, Pessoa b){
     if(a.getNome() < b.getNome())
         return true;
     return false;
 }
 
-ostream &operator <<(ostream& a, Pessoa b){
-    a<<"Nome: "<<b.getNome()<<" Senha: "<<b.getSenha()<<endl;
+inline ostream &  operator <<(ostream& a, Pessoa b){
+    a<<"Nome: "<<b.getNome()<<" Login: "<<b.getLogin()<<" Senha: "<<b.getSenha()<<endl;
     return a;
 }
 #endif // PESSOA_H

@@ -3,8 +3,8 @@
 #include <QMainWindow>
 
     //BLOCO QUE GERA ERRO DOIS
-//#include "pessoa.h"
-//#include "ldde.h"
+#include "pessoa.h"
+#include "ldde.h"
 
 #include <string.h>
 #include "registro.h"
@@ -31,7 +31,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    //Lds<Pessoa> Cadastrados;
+    Lds<Pessoa> Cadastrados;
 };
 
 #endif // MAINWINDOW_H

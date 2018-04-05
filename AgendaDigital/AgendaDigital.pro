@@ -33,7 +33,6 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     pessoa.h \
-    agenda.h \
     ldde.h \
     lds.h \
     registro.h \

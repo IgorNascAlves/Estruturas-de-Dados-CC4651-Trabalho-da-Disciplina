@@ -26,5 +26,6 @@ void MainWindow::on_btnCadastro_clicked()
     string usr = (ui->lblUser->text()).toStdString();
     string senha = (ui->lblSenha->text()).toStdString();
     string nome = (ui->lblNome->text()).toStdString();
-    //Cadastrados.inserir(Pessoa(nome,usr,senha));
+    Cadastrados.inserir(Pessoa(nome,usr,senha));
+    Cadastrados.imprimir();
 }
