@@ -52,6 +52,9 @@ class Lds{
         bool operator +(T valor){
             return inserir(valor);
         }
+         int getN(){
+            return n;
+        }
         ~Lds(){
 //            int i = 0;
 //            while(i<n){
