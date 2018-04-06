@@ -24,6 +24,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -51,11 +52,9 @@ public:
     QLabel *label_11;
     QPushButton *btnSair;
     QGroupBox *gbOpcoes;
-    QWidget *gridLayoutWidget_2;
-    QGridLayout *gridLayout_2;
-    QPushButton *btnConsulta;
-    QPushButton *btnAdd;
-    QPushButton *btnAll;
+    QCalendarWidget *calendarWidget;
+    QLabel *label_10;
+    QTimeEdit *timeEdit;
     QGroupBox *gbExibir;
     QTableWidget *tblExibir;
     QGroupBox *gbCompromisso;
@@ -70,7 +69,6 @@ public:
     QLabel *label_9;
     QLabel *label_8;
     QTextEdit *textEdit;
-    QCalendarWidget *calendarWidget;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -152,30 +150,16 @@ public:
         btnSair->setGeometry(QRect(190, 160, 71, 25));
         gbOpcoes = new QGroupBox(centralWidget);
         gbOpcoes->setObjectName(QStringLiteral("gbOpcoes"));
-        gbOpcoes->setGeometry(QRect(30, 220, 271, 181));
-        gridLayoutWidget_2 = new QWidget(gbOpcoes);
-        gridLayoutWidget_2->setObjectName(QStringLiteral("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(0, 20, 251, 161));
-        gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
-        gridLayout_2->setSpacing(6);
-        gridLayout_2->setContentsMargins(11, 11, 11, 11);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        btnConsulta = new QPushButton(gridLayoutWidget_2);
-        btnConsulta->setObjectName(QStringLiteral("btnConsulta"));
-
-        gridLayout_2->addWidget(btnConsulta, 0, 0, 1, 1);
-
-        btnAdd = new QPushButton(gridLayoutWidget_2);
-        btnAdd->setObjectName(QStringLiteral("btnAdd"));
-
-        gridLayout_2->addWidget(btnAdd, 1, 0, 1, 1);
-
-        btnAll = new QPushButton(gridLayoutWidget_2);
-        btnAll->setObjectName(QStringLiteral("btnAll"));
-
-        gridLayout_2->addWidget(btnAll, 2, 0, 1, 1);
-
+        gbOpcoes->setGeometry(QRect(160, 230, 401, 261));
+        calendarWidget = new QCalendarWidget(gbOpcoes);
+        calendarWidget->setObjectName(QStringLiteral("calendarWidget"));
+        calendarWidget->setGeometry(QRect(20, 40, 341, 171));
+        label_10 = new QLabel(gbOpcoes);
+        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setGeometry(QRect(80, 230, 67, 17));
+        timeEdit = new QTimeEdit(gbOpcoes);
+        timeEdit->setObjectName(QStringLiteral("timeEdit"));
+        timeEdit->setGeometry(QRect(240, 220, 118, 26));
         gbExibir = new QGroupBox(centralWidget);
         gbExibir->setObjectName(QStringLiteral("gbExibir"));
         gbExibir->setGeometry(QRect(710, 40, 541, 531));
@@ -236,10 +220,16 @@ public:
 
         gridLayout_4->addWidget(textEdit, 1, 1, 1, 1);
 
-        calendarWidget = new QCalendarWidget(centralWidget);
-        calendarWidget->setObjectName(QStringLiteral("calendarWidget"));
-        calendarWidget->setGeometry(QRect(340, 230, 341, 171));
         MainWindow->setCentralWidget(centralWidget);
+        gbOpcoes->raise();
+        label->raise();
+        label_2->raise();
+        label_3->raise();
+        label_4->raise();
+        label_5->raise();
+        gbEntrada->raise();
+        gbExibir->raise();
+        gbCompromisso->raise();
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -267,10 +257,8 @@ public:
         label_7->setText(QApplication::translate("MainWindow", "Usuario:", nullptr));
         label_11->setText(QApplication::translate("MainWindow", "Nome:", nullptr));
         btnSair->setText(QApplication::translate("MainWindow", "Sair", nullptr));
-        gbOpcoes->setTitle(QApplication::translate("MainWindow", "Op\303\247\303\265es", nullptr));
-        btnConsulta->setText(QApplication::translate("MainWindow", "Consulta", nullptr));
-        btnAdd->setText(QApplication::translate("MainWindow", "Adicionar", nullptr));
-        btnAll->setText(QApplication::translate("MainWindow", "Exibir Todos", nullptr));
+        gbOpcoes->setTitle(QApplication::translate("MainWindow", "Calendario", nullptr));
+        label_10->setText(QApplication::translate("MainWindow", "Horario:", nullptr));
         gbExibir->setTitle(QApplication::translate("MainWindow", "Exibir Todos", nullptr));
         gbCompromisso->setTitle(QApplication::translate("MainWindow", "Compromisso", nullptr));
         btnBuscar->setText(QApplication::translate("MainWindow", "Buscar", nullptr));

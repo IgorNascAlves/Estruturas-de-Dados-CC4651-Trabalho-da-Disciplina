@@ -192,47 +192,47 @@
    <widget class="QGroupBox" name="gbOpcoes">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>220</y>
-      <width>271</width>
-      <height>181</height>
+      <x>160</x>
+      <y>230</y>
+      <width>401</width>
+      <height>261</height>
      </rect>
     </property>
     <property name="title">
-     <string>Opções</string>
+     <string>Calendario</string>
     </property>
-    <widget class="QWidget" name="gridLayoutWidget_2">
+    <widget class="QCalendarWidget" name="calendarWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>20</y>
-       <width>251</width>
-       <height>161</height>
+       <x>20</x>
+       <y>40</y>
+       <width>341</width>
+       <height>171</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QPushButton" name="btnConsulta">
-        <property name="text">
-         <string>Consulta</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="btnAdd">
-        <property name="text">
-         <string>Adicionar</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="btnAll">
-        <property name="text">
-         <string>Exibir Todos</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>230</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Horario:</string>
+     </property>
+    </widget>
+    <widget class="QTimeEdit" name="timeEdit">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>220</y>
+       <width>118</width>
+       <height>26</height>
+      </rect>
+     </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="gbExibir">
@@ -336,16 +336,15 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QCalendarWidget" name="calendarWidget">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>230</y>
-      <width>341</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
+   <zorder>gbOpcoes</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>gbEntrada</zorder>
+   <zorder>gbExibir</zorder>
+   <zorder>gbCompromisso</zorder>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

@@ -1,4 +1,4 @@
-1 - quando cadastro da erro ele não funciona como se tivesse tido sucesso.(GUI)
-2 - Btn Excluir e Buscar(GUI)
-3 - Listar (c/ defeito)(GUI ou  Cod)
-4 - Atualizar GUI para nova versão
+[X] - quando cadastro da erro ele não funciona como se tivesse tido sucesso.(GUI)
+[ ] - Btn Excluir e Buscar(GUI)
+[X] - Listar (c/ defeito)(GUI ou  Cod)
+[X] - Atualizar GUI para nova versão

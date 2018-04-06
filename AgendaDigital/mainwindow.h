@@ -33,11 +33,13 @@ private slots:
 
     void on_btnSair_clicked();
 
+    void on_btnBuscar_clicked();
+
 private:
     Ui::MainWindow *ui;
     int id;
     Lds<Pessoa> Cadastrados;
-    void atualizaExibir();
+    void atualizaExibir(bool entrando);
 };
 
 #endif // MAINWINDOW_H
