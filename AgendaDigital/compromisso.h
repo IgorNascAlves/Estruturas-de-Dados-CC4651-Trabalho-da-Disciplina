@@ -12,6 +12,8 @@ class Compromisso{
         int dia;
         int mes;
         int ano;
+        int hora;
+        int minuto;
 
     public:
         Compromisso() {
@@ -20,13 +22,17 @@ class Compromisso{
             dia = 0;
             mes = 0;
             ano = 0;
+            minuto = 0;
+            hora = 0;
         }
-        Compromisso(string tit, string desc, int d, int m , int a ) {
+        Compromisso(string tit, string desc, int d, int m , int a , int h, int min) {
             titulo = tit;
             descricao = desc;
             dia = d;
             mes = m;
             ano = a;
+            hora  = h;
+            minuto = min;
         }
         bool setMes(int i){
             if(i<1 && i>12)
@@ -34,6 +40,25 @@ class Compromisso{
             mes = i;
             return true;
 
+        }
+        bool setHora(int i){
+            if(i<0 && i>23)
+                return false;
+            mes = i;
+            return true;
+
+        }
+        bool setMinuto(int i){
+            if(i<0 && i>59)
+                return false;
+            mes = i;
+            return true;
+        }
+        int getHora(){
+            return hora;
+        }
+        int getMinuto(){
+            return minuto;
         }
 
         int getMes(){
@@ -77,8 +102,15 @@ class Compromisso{
                else{
                    if(getDia() > y.getDia() && getMes() == y.getMes() && getAno() == y.getAno())
                        return true;
-                   else
-                       return false;
+                   else{
+                      if(getHora() > y.getHora() && getDia() == y.getDia() && getMes() == y.getMes() && getAno() == y.getAno())
+                          return true;
+                      else{
+                        if(getMinuto() > y.getMinuto() && getHora() == y.getHora() && getDia() == y.getDia() && getMes() == y.getMes() && getAno() == y.getAno())
+                            return true;
+                        else
+                            return false;
+                      }
                }
            }
        }
