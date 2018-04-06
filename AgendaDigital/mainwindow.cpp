@@ -118,3 +118,9 @@ void MainWindow::on_btnBuscar_clicked()
         ui->textEdit->setText(QString::fromStdString(hoje.getDescricao()));
     }
 }
+
+void MainWindow::on_btnDeletar_clicked()
+{
+    Cadastrados[id]->getTarefas()->remove(ui->lblTitulo->text().toStdString());
+    atualizaExibir(true);
+}
