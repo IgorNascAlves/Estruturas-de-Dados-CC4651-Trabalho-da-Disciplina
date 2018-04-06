@@ -61,8 +61,8 @@ public:
     QWidget *gridLayoutWidget_3;
     QGridLayout *gridLayout_3;
     QPushButton *btnBuscar;
-    QPushButton *btnDeletar;
     QPushButton *btnSalvar;
+    QPushButton *btnDeletar;
     QWidget *gridLayoutWidget_4;
     QGridLayout *gridLayout_4;
     QLineEdit *lblTitulo;
@@ -180,17 +180,17 @@ public:
         btnBuscar = new QPushButton(gridLayoutWidget_3);
         btnBuscar->setObjectName(QStringLiteral("btnBuscar"));
 
-        gridLayout_3->addWidget(btnBuscar, 3, 0, 1, 1);
-
-        btnDeletar = new QPushButton(gridLayoutWidget_3);
-        btnDeletar->setObjectName(QStringLiteral("btnDeletar"));
-
-        gridLayout_3->addWidget(btnDeletar, 3, 2, 1, 1);
+        gridLayout_3->addWidget(btnBuscar, 3, 1, 1, 1);
 
         btnSalvar = new QPushButton(gridLayoutWidget_3);
         btnSalvar->setObjectName(QStringLiteral("btnSalvar"));
 
-        gridLayout_3->addWidget(btnSalvar, 3, 1, 1, 1);
+        gridLayout_3->addWidget(btnSalvar, 3, 2, 1, 1);
+
+        btnDeletar = new QPushButton(gridLayoutWidget_3);
+        btnDeletar->setObjectName(QStringLiteral("btnDeletar"));
+
+        gridLayout_3->addWidget(btnDeletar, 3, 0, 1, 1);
 
         gridLayoutWidget_4 = new QWidget(gbCompromisso);
         gridLayoutWidget_4->setObjectName(QStringLiteral("gridLayoutWidget_4"));
@@ -262,8 +262,8 @@ public:
         gbExibir->setTitle(QApplication::translate("MainWindow", "Exibir Todos", nullptr));
         gbCompromisso->setTitle(QApplication::translate("MainWindow", "Compromisso", nullptr));
         btnBuscar->setText(QApplication::translate("MainWindow", "Buscar", nullptr));
-        btnDeletar->setText(QApplication::translate("MainWindow", "Deletar", nullptr));
         btnSalvar->setText(QApplication::translate("MainWindow", "Salvar", nullptr));
+        btnDeletar->setText(QApplication::translate("MainWindow", "Deletar", nullptr));
         label_9->setText(QApplication::translate("MainWindow", "Titulo:", nullptr));
         label_8->setText(QApplication::translate("MainWindow", "Descri\303\247\303\243o:", nullptr));
     } // retranslateUi

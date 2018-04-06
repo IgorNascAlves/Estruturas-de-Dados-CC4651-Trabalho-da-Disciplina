@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = AgendaDigital1.0.0
-DISTDIR = /home/popo-flipe/Documents/fei/ed/Projeto/Estruturas-de-Dados-CC4651-Trabalho-da-Disciplina/AgendaDigital/.tmp/AgendaDigital1.0.0
+DISTDIR = /home/popo-flipe/Downloads/fei/ED/Estruturas-de-Dados-CC4651-Trabalho-da-Disciplina-cb3101f317cf3a67de99b6d3dc15a90e6babc88a/AgendaDigital/.tmp/AgendaDigital1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/popo-flipe/Qt/5.10.0/gcc_64/lib
 LIBS          = $(SUBLIBS) -L/home/popo-flipe/Qt/5.10.0/gcc_64/lib -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
@@ -240,10 +240,11 @@ DIST          = /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/spec_pre.prf 
 		/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/lex.prf \
 		AgendaDigital.pro mainwindow.h \
 		pessoa.h \
-		agenda.h \
 		ldde.h \
 		lds.h \
-		registro.h main.cpp \
+		registro.h \
+		compromisso.h \
+		checklogin.h main.cpp \
 		mainwindow.cpp
 QMAKE_TARGET  = AgendaDigital
 DESTDIR       = 
@@ -646,7 +647,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h pessoa.h agenda.h ldde.h lds.h registro.h $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h pessoa.h ldde.h lds.h registro.h compromisso.h checklogin.h $(DISTDIR)/
 	$(COPY_FILE) --parents main.cpp mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
@@ -789,10 +790,19 @@ moc_mainwindow.cpp: /home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QMainWin
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qicon.h \
+		pessoa.h \
+		ldde.h \
+		registro.h \
+		compromisso.h \
+		checklogin.h \
+		lds.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QMessageBox \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qdialog.h \
 		mainwindow.h \
 		moc_predefs.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/bin/moc
-	/home/popo-flipe/Qt/5.10.0/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/linux-g++ -I/home/popo-flipe/Documents/fei/ed/Projeto/Estruturas-de-Dados-CC4651-Trabalho-da-Disciplina/AgendaDigital -I/home/popo-flipe/Qt/5.10.0/gcc_64/include -I/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets -I/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui -I/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+	/home/popo-flipe/Qt/5.10.0/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/popo-flipe/Qt/5.10.0/gcc_64/mkspecs/linux-g++ -I/home/popo-flipe/Downloads/fei/ED/Estruturas-de-Dados-CC4651-Trabalho-da-Disciplina-cb3101f317cf3a67de99b6d3dc15a90e6babc88a/AgendaDigital -I/home/popo-flipe/Qt/5.10.0/gcc_64/include -I/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets -I/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui -I/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -922,17 +932,22 @@ main.o: main.cpp mainwindow.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qicon.h \
+		pessoa.h \
+		ldde.h \
+		registro.h \
+		compromisso.h \
+		checklogin.h \
+		lds.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QMessageBox \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qdialog.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QApplication \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qapplication.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qcoreapplication.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qeventloop.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qguiapplication.h \
-		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qinputmethod.h \
-		registro.h \
-		ldde.h \
-		lds.h \
-		pessoa.h
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qinputmethod.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -1042,6 +1057,15 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qicon.h \
+		pessoa.h \
+		ldde.h \
+		registro.h \
+		compromisso.h \
+		checklogin.h \
+		lds.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QMessageBox \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qdialog.h \
 		ui_mainwindow.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/QVariant \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QAction \
@@ -1056,11 +1080,21 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qinputmethod.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QButtonGroup \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QCalendarWidget \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qcalendarwidget.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qdatetime.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QGridLayout \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qlayout.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QGroupBox \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qframe.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QHeaderView \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qheaderview.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qabstractitemview.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qframe.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qabstractitemmodel.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtCore/qitemselectionmodel.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -1075,11 +1109,25 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qrubberband.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QLabel \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qlabel.h \
-		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QMenuBar \
-		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qmenubar.h \
-		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qmenu.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QLineEdit \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qtextcursor.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qtextformat.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qpen.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qtextoption.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QPushButton \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QStatusBar \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QTableWidget \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtablewidget.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtableview.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QTextEdit \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtGui/qtextdocument.h \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QTimeEdit \
+		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qdatetimeedit.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QToolBar \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/qtoolbar.h \
 		/home/popo-flipe/Qt/5.10.0/gcc_64/include/QtWidgets/QWidget

@@ -35,6 +35,7 @@ private slots:
 
     void on_btnBuscar_clicked();
 
+
     void on_btnDeletar_clicked();
 
 private:
