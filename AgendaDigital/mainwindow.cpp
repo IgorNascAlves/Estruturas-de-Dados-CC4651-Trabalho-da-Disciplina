@@ -31,6 +31,7 @@ void MainWindow::atualizaExibir(bool entrando){
             ui->tblExibir->setItem(i-1,0, new QTableWidgetItem(QString::fromStdString(valor.getTitulo())));
             ui->tblExibir->setItem(i-1,1, new QTableWidgetItem(QString::fromStdString(valor.getDescricao())));
             ui->tblExibir->setItem(i-1,2, new QTableWidgetItem(QString::number(valor.getDia())+"/"+QString::number(valor.getMes())+"/"+QString::number(valor.getAno())));
+            ui->tblExibir->setItem(i-1,3, new QTableWidgetItem(QString::number(valor.getHora())+":"+QString::number(valor.getMinuto())));
         }
     }
     ui->lblNome->setText("");
