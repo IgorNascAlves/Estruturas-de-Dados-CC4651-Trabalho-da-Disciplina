@@ -55,10 +55,11 @@ void MainWindow::atualizaExibir(bool entrando){
 
 void MainWindow::on_btnEntrar_clicked()
 {
+    ui->lblSenha->setEchoMode(QLineEdit::Password);
     bool entrou = false;
     Lds<Pessoa> v = Cadastrados;
     string usr = (ui->lblUser->text()).toStdString();
-    string senha = (ui->lblSenha->text()).toStdString();
+    string senha = (ui->lblSenha->text().toStdString());
     for(int i =0;i<=v.getN();i++)
         if(v[i]->getLogin() == usr){
             if(v[i]->getSenha() == senha){
@@ -77,6 +78,7 @@ void MainWindow::on_btnEntrar_clicked()
 
 void MainWindow::on_btnCadastro_clicked()
 {
+    ui->lblSenha->setEchoMode(QLineEdit::Password);
     bool entrou = false;
     string usr = (ui->lblUser->text()).toStdString();
     string senha = (ui->lblSenha->text()).toStdString();
