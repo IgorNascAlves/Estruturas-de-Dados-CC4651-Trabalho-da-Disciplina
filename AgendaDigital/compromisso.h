@@ -33,13 +33,34 @@ class Compromisso{
             hora = h;
             minuto = min;
         }
-        string converterHorario(int n){//converte hora ou min para string
+        string concatenaData(){
             string Resultado;
-            stringstream convert;
-            convert << n;
-            Resultado = convert.str();
-            if(n<10)
-               Resultado = "0" + Resultado;
+            stringstream convertD;
+            stringstream convertM;
+            stringstream convertA;
+            convertD << dia;
+            convertM << mes;
+            convertA << ano;
+            Resultado = convertD.str() + "/"+convertM.str()+"/"+convertA.str();
+            return Resultado;
+        }
+        string converterHorario(){//converte hora ou min para string
+            string Resultado;
+            stringstream convertH;
+            convertH << hora;
+            stringstream convertMin;
+            convertMin << minuto;
+            Resultado = convertH.str();
+            if(hora<10)
+               Resultado = "0" + convertH.str();
+            else
+                Resultado = convertH.str();
+            Resultado = Resultado +":";
+            if(minuto<10)
+                Resultado = Resultado +"0"+convertMin.str();
+            else
+                Resultado = Resultado + convertMin.str();
+
             return Resultado;
         }
         bool setHora(int i){

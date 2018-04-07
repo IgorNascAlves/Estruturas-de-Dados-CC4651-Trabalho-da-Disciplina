@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     id = -1;
     ui->btnSair->setEnabled(false);
     ui->gbCompromisso->setHidden(true);
-    ui->tblExibir->setEnabled(false);
+   // ui->tblExibir->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -30,9 +30,8 @@ void MainWindow::atualizaExibir(bool entrando){
         while(Cadastrados[id]->getTarefas()->busca(i++,valor)){
             ui->tblExibir->setItem(i-1,0, new QTableWidgetItem(QString::fromStdString(valor.getTitulo())));
             ui->tblExibir->setItem(i-1,1, new QTableWidgetItem(QString::fromStdString(valor.getDescricao())));
-            ui->tblExibir->setItem(i-1,2, new QTableWidgetItem(QString::number(valor.getDia())+"/"+QString::number(valor.getMes())+"/"+QString::number(valor.getAno())));
-            ui->tblExibir->setItem(i-1,3, new QTableWidgetItem(QString::fromStdString(valor.converterHorario(valor.getHora()))+":"+QString::fromStdString(valor.converterHorario(valor.getMinuto()))));
-
+            ui->tblExibir->setItem(i-1,2, new QTableWidgetItem(QString::fromStdString(valor.concatenaData())));
+            ui->tblExibir->setItem(i-1,3, new QTableWidgetItem(QString::fromStdString(valor.converterHorario())));
         }
     }
     ui->lblNome->setText("");
@@ -52,6 +51,7 @@ void MainWindow::atualizaExibir(bool entrando){
     ui->btnSair->setEnabled(entrando);
     ui->gbCompromisso->setHidden(!entrando);
 }
+
 
 void MainWindow::on_btnEntrar_clicked()
 {
@@ -120,7 +120,12 @@ void MainWindow::on_btnBuscar_clicked()
         ui->calendarWidget->setSelectedDate(QDate(hoje.getAno(),hoje.getMes(),hoje.getDia()));
         ui->lblTitulo->setText(QString::fromStdString(hoje.getTitulo()));
         ui->textEdit->setText(QString::fromStdString(hoje.getDescricao()));
+    }else{
+        QMessageBox msgBox;
+        msgBox.setText("Registro não encontrado");
+        msgBox.exec();
     }
+
 }
 
 void MainWindow::on_btnDeletar_clicked()
@@ -128,3 +133,16 @@ void MainWindow::on_btnDeletar_clicked()
     Cadastrados[id]->getTarefas()->remove(ui->lblTitulo->text().toStdString());
     atualizaExibir(true);
 }
+
+
+void MainWindow::on_tblExibir_doubleClicked(const QModelIndex &index)
+{
+
+    QMessageBox msgBox;
+    int i = index.row();
+    Compromisso valor = Cadastrados[id]->getTarefas()->buscaCompromisso(i);
+    msgBox.setText(QString::fromStdString(valor.getTitulo()+"\n"+ valor.getDescricao()+"\n"+valor.concatenaData()+"   -   "+ valor.converterHorario()));
+    msgBox.exec();
+}
+
+

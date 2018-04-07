@@ -59,6 +59,14 @@ public:
 //        delete primeiro;
 //        delete ultimo;
 //    }
+    Compromisso buscaCompromisso(int ind){
+        Registro<T> *b = primeiro;//primeiro
+        int i=0;
+        while(b && i++ != ind)
+            b = b->getProximo();
+        if(b)
+            return b->getConteudo();
+        }
 
     bool busca(int ind, T &valor){
         Registro<T> *b = primeiro;//primeiro
