@@ -118,6 +118,7 @@ void MainWindow::on_btnBuscar_clicked()
     if(busca){
         Compromisso hoje = busca->getConteudo();
         ui->calendarWidget->setSelectedDate(QDate(hoje.getAno(),hoje.getMes(),hoje.getDia()));
+        ui->timeEdit->setTime(QTime(hoje.getHora(),hoje.getMinuto()));
         ui->lblTitulo->setText(QString::fromStdString(hoje.getTitulo()));
         ui->textEdit->setText(QString::fromStdString(hoje.getDescricao()));
     }else{
@@ -137,7 +138,6 @@ void MainWindow::on_btnDeletar_clicked()
 
 void MainWindow::on_tblExibir_doubleClicked(const QModelIndex &index)
 {
-
     QMessageBox msgBox;
     int i = index.row();
     Compromisso valor = Cadastrados[id]->getTarefas()->buscaCompromisso(i);
