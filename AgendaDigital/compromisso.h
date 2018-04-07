@@ -1,7 +1,7 @@
 #ifndef compromisso_H
 #define compromisso_H
 #include <string>
-
+#include <sstream>
 using namespace std;
 
 
@@ -32,6 +32,15 @@ class Compromisso{
             ano = a;
             hora = h;
             minuto = min;
+        }
+        string converterHorario(int n){//converte hora ou min para string
+            string Resultado;
+            stringstream convert;
+            convert << n;
+            Resultado = convert.str();
+            if(n<10)
+               Resultado = "0" + Resultado;
+            return Resultado;
         }
         bool setHora(int i){
             if(i<0 && i>23)
