@@ -96,7 +96,9 @@ void MainWindow::on_btnSalvar_clicked()
     int dia = (ui->calendarWidget->selectedDate().day());
     int mes = (ui->calendarWidget->selectedDate().month());
     int ano = (ui->calendarWidget->selectedDate().year());
-    Cadastrados[id]->getTarefas()->inserir(Compromisso(titulo,descricao,dia,mes,ano));
+    int hora = (ui->timeEdit->time().hour());
+    int min = (ui->timeEdit->time().minute());
+    Cadastrados[id]->getTarefas()->inserir(Compromisso(titulo,descricao,dia,mes,ano,hora,min));
     Cadastrados[id]->getTarefas()->imprimir();
     atualizaExibir(true);
 
