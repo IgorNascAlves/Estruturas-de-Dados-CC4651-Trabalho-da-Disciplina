@@ -111,6 +111,7 @@ public:
         gridLayout->setContentsMargins(0, 0, 0, 0);
         lblSenha = new QLineEdit(gridLayoutWidget);
         lblSenha->setObjectName(QStringLiteral("lblSenha"));
+        lblSenha->setEchoMode(QLineEdit::Password);
 
         gridLayout->addWidget(lblSenha, 1, 1, 1, 1);
 
@@ -171,7 +172,7 @@ public:
         gbCompromisso->setGeometry(QRect(310, 20, 381, 201));
         gridLayoutWidget_3 = new QWidget(gbCompromisso);
         gridLayoutWidget_3->setObjectName(QStringLiteral("gridLayoutWidget_3"));
-        gridLayoutWidget_3->setGeometry(QRect(20, 170, 351, 27));
+        gridLayoutWidget_3->setGeometry(QRect(20, 170, 351, 29));
         gridLayout_3 = new QGridLayout(gridLayoutWidget_3);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -251,6 +252,7 @@ public:
         label_4->setText(QApplication::translate("MainWindow", "AUGUSTO TUROLLA", nullptr));
         label_5->setText(QApplication::translate("MainWindow", "RAFAEL DA SILVA", nullptr));
         gbEntrada->setTitle(QApplication::translate("MainWindow", "ENTRADA", nullptr));
+        lblSenha->setInputMask(QString());
         label_6->setText(QApplication::translate("MainWindow", "Senha:", nullptr));
         btnCadastro->setText(QApplication::translate("MainWindow", "Cadastro", nullptr));
         btnEntrar->setText(QApplication::translate("MainWindow", "Entrar", nullptr));

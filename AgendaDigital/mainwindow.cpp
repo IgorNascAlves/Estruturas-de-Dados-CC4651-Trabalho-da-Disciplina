@@ -11,7 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
     id = -1;
     ui->btnSair->setEnabled(false);
     ui->gbCompromisso->setHidden(true);
-   // ui->tblExibir->setEnabled(false);
+    ui->gbOpcoes->setHidden(true);
+    ui->gbExibir->setHidden(true);
 }
 
 MainWindow::~MainWindow()
@@ -50,6 +51,8 @@ void MainWindow::atualizaExibir(bool entrando){
     ui->btnCadastro->setEnabled(!entrando);
     ui->btnSair->setEnabled(entrando);
     ui->gbCompromisso->setHidden(!entrando);
+    ui->gbOpcoes->setHidden(!entrando);
+    ui->gbExibir->setHidden(!entrando);
 }
 
 
