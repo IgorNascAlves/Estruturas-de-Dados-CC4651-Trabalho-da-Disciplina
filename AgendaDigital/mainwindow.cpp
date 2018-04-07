@@ -39,6 +39,7 @@ void MainWindow::atualizaExibir(bool entrando){
     ui->lblUser->setText("");
     ui->lblTitulo->setText("");
     ui->textEdit->setText("");
+    ui->timeEdit->setTime(QTime(0,0,0,0));
 
     ui->calendarWidget->showToday();
 
