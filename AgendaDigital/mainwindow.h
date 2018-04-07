@@ -38,6 +38,10 @@ private slots:
 
     void on_btnDeletar_clicked();
 
+    void on_tblExibir_doubleClicked(const QModelIndex &index);
+
+
+
 private:
     Ui::MainWindow *ui;
     int id;
