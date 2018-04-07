@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->tblExibir->setColumnCount(3);
+    ui->tblExibir->setColumnCount(4);
     ui->tblExibir->setRowCount(1);
     id = -1;
     ui->btnSair->setEnabled(false);
@@ -101,7 +101,6 @@ void MainWindow::on_btnSalvar_clicked()
     Cadastrados[id]->getTarefas()->inserir(Compromisso(titulo,descricao,dia,mes,ano,hora,min));
     Cadastrados[id]->getTarefas()->imprimir();
     atualizaExibir(true);
-
 }
 
 void MainWindow::on_btnSair_clicked()
